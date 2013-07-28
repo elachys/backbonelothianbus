@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lothian buses</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body>
+    <div id="content">
+        <ul id="stop-list"></ul>
+    </div>
+    <script type="text/template" id="stopItem-template">
+        <div class="view">
+            <h2><%- name %> - (<%- services.length %>)</h2> <button class="times">Get Times</button>
+            <ul class="buses">
+                <% _.each(services, function(service){ %>
+                    <li><%- service %></li>
+                <% }); %>
+            </ul>
+        </div>
+    </script>
+    <script type="text/template" id="stopBuses-template">
+        <div class="view">
+            <ul class="buses">
+            <% _.each(services, function(service){ %>
+                <li><%- service %></li>
+            <% }); %>
+        </div>
+    </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
